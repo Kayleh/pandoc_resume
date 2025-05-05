@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>resume</title>
+  <style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <style type="text/css">
+  /*
+   * Copyright 2013 Christophe-Marie Duquesne <chmd@chmd.fr>
+   *
+   * CSS for making a resume with pandoc. Inspired by moderncv.
+   *
+   * This CSS document is delivered to you under the CC BY-SA 3.0 License.
+   * https://creativecommons.org/licenses/by-sa/3.0/deed.en_US
+   */
+
+  /* Whole document */
+  body {
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      max-width: 800px;
+      margin: auto;
+      background: #FFFFFF;
+      padding: 10px 10px 10px 10px;
+  }
+
+  /* Title of the resume */
+  h1 {
+      font-size: 55px;
+      color: #757575;
+      text-align:center;
+      margin-bottom:15px;
+  }
+  /* h1:hover { */
+  /*     background-color: #757575; */
+  /*     color: #FFFFFF; */
+  /*     text-shadow: 1px 1px 1px #333; */
+  /* } */
+
+  /* Titles of categories */
+  h2 {
+      /* This is called "sectioncolor" in the ConTeXt stylesheet. */
+      color: #397249;
+  }
+  /* There is a bar just before each category */
+  h2:before {
+      content: "";
+      display: inline-block;
+      margin-right:1%;
+      width: 16%;
+      height: 10px;
+      /* This is called "rulecolor" in the ConTeXt stylesheet. */
+      background-color: #9CB770;
+  }
+  /* h2:hover { */
+  /*     background-color: #397249; */
+  /*     color: #FFFFFF; */
+  /*     text-shadow: 1px 1px 1px #333; */
+  /* } */
+
+  /* Definitions */
+  dt {
+      float: left;
+      clear: left;
+      width: 17%;
+      font-weight: bold;
+  }
+  dd {
+      margin-left: 17%;
+      margin-bottom:7px;
+  }
+  p {
+      margin-top:0;
+      margin-bottom:7px;
+  }
+
+  /* Blockquotes */
+  blockquote {
+      text-align: center
+  }
+
+  /* Links */
+  a {
+      text-decoration: none;
+      color: #397249;
+  }
+  a:hover, a:active {
+      background-color: #397249;
+      color: #FFFFFF;
+      text-decoration: none;
+      text-shadow: 1px 1px 1px #333;
+  }
+
+  /* Horizontal separators */
+  hr {
+      color: #A6A6A6;
+  }
+
+  table {
+      width: 100%;
+  }
+  </style>
+</head>
+<body>
+<h1 id="姚锦庆">姚锦庆</h1>
+<table>
+<tbody>
+<tr class="odd">
+<td>个人网站 &lt;https://www.ka</td>
+<td>yleh.top&gt; email：<a href="mailto:kayleh@foxmail.com"
+class="email">kayleh@foxmail.com</a></td>
+</tr>
+<tr class="even">
+<td>5年经验</td>
+<td>15625715192</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>个人网站：<a href="https://www.kayleh.top" class="uri"
+target="_blank">https://www.kayleh.top</a></p>
+<p>资深全栈开发工程师，4年大型企业级应用开发经验，曾主导0到1交付千万级用户项目。精通Java/Python全栈技术体系（Spring
+Boot/Django/Vue.js/TypeScript），擅长分布式系统与微服务架构设计。具备TOC/TOB产品独立开发能力，主导构建过日均处理百万级请求的高并发系统，保障3000万+注册用户平台实时稳定运行。</p>
+<p>技术栈与贵司岗位需求高度契合，可快速投入核心业务开发。</p>
+</blockquote>
+<h2 id="技能">技能</h2>
+<ul>
+<li><p>Human Languages:</p>
+<ul>
+<li>English (native speaker)</li>
+<li>???</li>
+<li>This is what a nested list looks like.</li>
+</ul></li>
+<li><p>扎实的Java/Python基础，熟悉JVM基础，熟悉常⽤集合类，熟悉多线程并发编程。</p></li>
+<li><p>熟练使用SpringBoot/Django等常用Web框架，熟练使用Mybatis/Spring
+Data JPA等ORM框架。</p></li>
+<li><p>了解微服务架构，熟悉SpringCloud生态主要服务治理组件，熟悉Docker容器化部署。</p></li>
+<li><p>熟悉TCP/IP协议，HTTP协议。</p></li>
+<li><p>熟悉MySQL、PostgreSQL、达梦、人大金仓等关系数据库，具备一定的SQL调优能力,
+熟悉Redis等NoSQL数据库。</p></li>
+<li><p>熟悉XXL-job定时任务，熟悉MQ消息队列，熟悉Redission分布式锁。</p></li>
+<li><p>熟悉Linux系统及常用命令，能完成简单Shell脚本编写。</p></li>
+<li><p>熟悉常用的设计模式、数据结构与算法。</p></li>
+<li><p>常用工具：Maven、Git/SVN、Swagger等。</p></li>
+<li><p>掌握HTML5/CSS3/ES6、Vue、微信小程序，
+熟悉JS/TS、Element-ui等前端开发技术。</p></li>
+<li><p>其他：有信创云国产化建设交付经验，等保、云平台安全运维经验</p></li>
+</ul>
+<hr />
+<h2 id="工作经历">工作经历</h2>
+<p><strong>广州市正易信息科技有限公司 - 后端研发（2021/05 -
+2025/04）:</strong></p>
+<ul>
+<li>1.参与产品原始需求的讨论、反馈开发排期；</li>
+<li>2.完成核心代码开发、组内的code review；</li>
+<li>3.跟进联调、测试进度，完成服务端发布；</li>
+<li>4.产品迭代</li>
+<li>5.讨论系统架构及性能优化</li>
+</ul>
+<p><strong>东莞广易中医学研究中心（有限合伙） - 行政专员/助理（2020/12 -
+2021/05）:</strong></p>
+<ul>
+<li>1.负责公司日常后勤事务的全面管理，包括但不限于办公环境维护、员工福利规划等。</li>
+<li>2.协调内外部关系，确保来访接待与各项后勤工作的顺利进行。</li>
+<li>3.监督进度，推动各项计划的有效执行与按时完成。</li>
+<li>4.准确传达上级指令，及时处理各类紧急事务，保障公司运营顺畅。</li>
+</ul>
+<p><strong>东莞广易中医学研究中心（有限合伙） - 内容运营（2020/07 -
+2020/12）:</strong></p>
+<ul>
+<li>1.负责制定并执行公司内容运营策略，提升品牌影响力。</li>
+<li>2.创作高质量的原创内容，包括但不限于文章、报告及社交媒体帖子，以吸引并维护目标受众。</li>
+<li>3.监控并分析内容表现数据，调整运营策略以提高用户参与度和内容传播范围。</li>
+</ul>
+<h2 id="教育经历">教育经历</h2>
+<dl>
+<dt>2025-2028</dt>
+<dd>
+<p><strong>计算机科学与技术</strong>; 暨南大学</p>
+<p><em>主要课程：计算机组成原理</em></p>
+</dd>
+<dt>2018-2021</dt>
+<dd>
+<p><strong>工商管理</strong>; 广东食品药品职业学院</p>
+<p><em>主要课程：企业战略管理</em></p>
+</dd>
+</dl>
+<h2 id="项目经历">项目经历</h2>
+<dl>
+<dt>快消品二维码营销系统</dt>
+<dd>
+<p>DAU 30万+，用户总量2000万 1.
+负责设计并实现二维码生成与管理模块，确保每个二维码的唯一性与系统的稳定性。
+2.
+开发积分商城功能，包括商品展示、积分兑换流程，提升用户参与度和忠诚度。
+3. 实现订单追踪系统，通过二维码链接线上交易与线下核销，优化用户体验。 4.
+参与后端服务的开发，支持高并发场景下扫码核销、数据收集与分析等业务需求。
+6.
+参与系统的日常维护与性能优化，保障平台稳定运行，满足日活跃用户30万+的需求。
+7.
+通过持续迭代，根据市场反馈和用户数据，优化营销策略，提高整体营销效率。</p>
+<ul>
+<li>设计JWT多端统一鉴权方案，实现供应商与外部用户安全接入，日均处理4万用户注册；</li>
+<li>基于MQ队列解耦扫码权限异步缓冲校验，确保30万+日扫码请求99.9%实时响应；</li>
+<li>采用Redisson分布式锁解决积分商城超卖问题，并发订单处理能力提升至5000+/秒；</li>
+<li>开发手写板电子协议签署功能，简化业务签署流程。</li>
+</ul>
+</dd>
+<dt>快消品营销自动化系统（终端规模400万+）</dt>
+<dd>
+<ol type="1">
+<li>负责快消品营销自动化系统的设计与开发，专注于优化销售过程管理，提升客户信息全生命周期的管理效率。</li>
+<li>开发销售机会跟踪系统，确保销售团队及时响应并有效跟进潜在商机。</li>
+<li>确保整个销售流程的规范性和完整性，通过系统功能的不断迭代与优化，支持业务持续增长。</li>
+</ol>
+<ul>
+<li>主导门店拜访流程配置化、片区管理模块、铺市活动管理及资产投放模块开发，日均支持10万+终端拜访、运营；</li>
+<li>集成第三方表单实现数据自动化采集，设计多线程数据推送接口，3小时内完成400万终端数据同步至第三方平台；</li>
+<li>搭建百度AI商品实景图标注系统，提示货架商品识别准确率至95%。</li>
+</ul>
+</dd>
+<dd>
+<p><strong>职责:</strong>
+1.主导门店拜访流程配置化、片区管理模块、铺市活动管理及资产投放模块开发，日均支持10万+终端拜访、运营；
+2.集成第三方表单实现数据自动化采集，设计多线程数据推送接口，3小时内完成400万终端数据同步至第三方平台；
+3.搭建百度AI商品实景图标注系统，提示货架商品识别准确率至95%。</p>
+</dd>
+<dd>
+<p>Basic knowledge of <strong>C</strong>, <strong>x86 assembly</strong>,
+<strong>forth</strong>, <strong>Common Lisp</strong></p>
+</dd>
+</dl>
+<h2 id="extra-section-call-it-whatever-you-want">Extra Section, Call it
+Whatever You Want</h2>
+<ul>
+<li><p>Human Languages:</p>
+<ul>
+<li>English (native speaker)</li>
+<li>???</li>
+<li>This is what a nested list looks like.</li>
+</ul></li>
+<li><p>Random tidbit</p></li>
+<li><p>Other sort of impressive-sounding thing you did</p></li>
+</ul>
+<hr />
+</body>
+</html>

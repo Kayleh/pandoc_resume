@@ -1,0 +1,297 @@
+% Copyright 2013 Christophe-Marie Duquesne <chmd@chmd.fr>
+% Copyright 2014 Mark Szepieniec <http://github.com/mszep>
+% 
+% ConText style for making a resume with pandoc. Inspired by moderncv.
+% 
+% This CSS document is delivered to you under the CC BY-SA 3.0 License.
+% https://creativecommons.org/licenses/by-sa/3.0/deed.en_US
+
+\startmode[*mkii]
+  \enableregime[utf-8]  
+  \setupcolors[state=start]
+\stopmode
+
+\setupcolor[hex]
+\definecolor[titlegrey][h=757575]
+\definecolor[sectioncolor][h=397249]
+\definecolor[rulecolor][h=9cb770]
+
+% Enable hyperlinks
+\setupinteraction[state=start, color=sectioncolor]
+
+\setuppapersize [A4][A4]
+\setuplayout    [width=middle, height=middle,
+                 backspace=20mm, cutspace=0mm,
+                 topspace=10mm, bottomspace=20mm,
+                 header=0mm, footer=0mm]
+
+%\setuppagenumbering[location={footer,center}]
+
+\setupbodyfont[11pt, helvetica]
+
+\setupwhitespace[medium]
+
+\setupblackrules[width=31mm, color=rulecolor]
+
+\setuphead[chapter]      [style=\tfd]
+\setuphead[section]      [style=\tfd\bf, color=titlegrey, align=middle]
+\setuphead[subsection]   [style=\tfb\bf, color=sectioncolor, align=right,
+                          before={\leavevmode\blackrule\hspace}]
+\setuphead[subsubsection][style=\bf]
+
+\setuphead[chapter, section, subsection, subsubsection][number=no]
+
+%\setupdescriptions[width=10mm]
+
+\definedescription
+  [description]
+  [headstyle=bold, style=normal,
+   location=hanging, width=18mm, distance=14mm, margin=0cm]
+
+\setupitemize[autointro, packed]    % prevent orphan list intro
+\setupitemize[indentnext=no]
+
+\defineitemgroup[enumerate]
+\setupenumerate[each][fit][itemalign=left,distance=.5em,style={\feature[+][default:tnum]}]
+
+\setupfloat[figure][default={here,nonumber}]
+\setupfloat[table][default={here,nonumber}]
+
+\setuptables[textwidth=max, HL=none]
+\setupxtable[frame=off,option={stretch,width}]
+
+\setupthinrules[width=15em] % width of horizontal rules
+
+\setupdelimitedtext
+  [blockquote]
+  [before={\setupalign[middle]},
+   indentnext=no,
+  ]
+
+
+\starttext
+
+\startsectionlevel[title={姚锦庆},reference={姚锦庆}]
+
+\startplacetable[location=none]
+\startxtable
+\startxtablehead[head]
+\stopxtablehead
+\startxtablebody[body]
+\startxrow
+\startxcell 个人网站 <https://www.ka \stopxcell
+\startxcell yleh.top>
+email：\goto{kayleh@foxmail.com}[url(mailto:kayleh@foxmail.com)] \stopxcell
+\stopxrow
+\startxrowgroup[lastrow]
+\startxrow
+\startxcell 5年经验 \stopxcell
+\startxcell 15625715192 \stopxcell
+\stopxrow
+\stopxrowgroup
+\stopxtablebody
+\startxtablefoot[foot]
+\stopxtablefoot
+\stopxtable
+\stopplacetable
+
+\startblockquote
+个人网站：\useURL[url1][https://www.kayleh.top]\from[url1]
+
+资深全栈开发工程师，4年大型企业级应用开发经验，曾主导0到1交付千万级用户项目。精通Java/Python全栈技术体系（Spring
+Boot/Django/Vue.js/TypeScript），擅长分布式系统与微服务架构设计。具备TOC/TOB产品独立开发能力，主导构建过日均处理百万级请求的高并发系统，保障3000万+注册用户平台实时稳定运行。
+
+技术栈与贵司岗位需求高度契合，可快速投入核心业务开发。
+\stopblockquote
+
+\startsectionlevel[title={技能},reference={技能}]
+
+\startitemize
+\item
+  Human Languages:
+
+  \startitemize[packed]
+  \item
+    English (native speaker)
+  \item
+    ???
+  \item
+    This is what a nested list looks like.
+  \stopitemize
+\item
+  扎实的Java/Python基础，熟悉JVM基础，熟悉常⽤集合类，熟悉多线程并发编程。
+\item
+  熟练使用SpringBoot/Django等常用Web框架，熟练使用Mybatis/Spring Data
+  JPA等ORM框架。
+\item
+  了解微服务架构，熟悉SpringCloud生态主要服务治理组件，熟悉Docker容器化部署。
+\item
+  熟悉TCP/IP协议，HTTP协议。
+\item
+  熟悉MySQL、PostgreSQL、达梦、人大金仓等关系数据库，具备一定的SQL调优能力,
+  熟悉Redis等NoSQL数据库。
+\item
+  熟悉XXL-job定时任务，熟悉MQ消息队列，熟悉Redission分布式锁。
+\item
+  熟悉Linux系统及常用命令，能完成简单Shell脚本编写。
+\item
+  熟悉常用的设计模式、数据结构与算法。
+\item
+  常用工具：Maven、Git/SVN、Swagger等。
+\item
+  掌握HTML5/CSS3/ES6、Vue、微信小程序，
+  熟悉JS/TS、Element-ui等前端开发技术。
+\item
+  其他：有信创云国产化建设交付经验，等保、云平台安全运维经验
+\stopitemize
+
+\thinrule
+
+\stopsectionlevel
+
+\startsectionlevel[title={工作经历},reference={工作经历}]
+
+{\bf 广州市正易信息科技有限公司 - 后端研发（2021/05 - 2025/04）:}
+
+\startitemize[packed]
+\item
+  1.参与产品原始需求的讨论、反馈开发排期；
+\item
+  2.完成核心代码开发、组内的code review；
+\item
+  3.跟进联调、测试进度，完成服务端发布；
+\item
+  4.产品迭代
+\item
+  5.讨论系统架构及性能优化
+\stopitemize
+
+{\bf 东莞广易中医学研究中心（有限合伙） - 行政专员/助理（2020/12 -
+2021/05）:}
+
+\startitemize[packed]
+\item
+  1.负责公司日常后勤事务的全面管理，包括但不限于办公环境维护、员工福利规划等。
+\item
+  2.协调内外部关系，确保来访接待与各项后勤工作的顺利进行。
+\item
+  3.监督进度，推动各项计划的有效执行与按时完成。
+\item
+  4.准确传达上级指令，及时处理各类紧急事务，保障公司运营顺畅。
+\stopitemize
+
+{\bf 东莞广易中医学研究中心（有限合伙） - 内容运营（2020/07 -
+2020/12）:}
+
+\startitemize[packed]
+\item
+  1.负责制定并执行公司内容运营策略，提升品牌影响力。
+\item
+  2.创作高质量的原创内容，包括但不限于文章、报告及社交媒体帖子，以吸引并维护目标受众。
+\item
+  3.监控并分析内容表现数据，调整运营策略以提高用户参与度和内容传播范围。
+\stopitemize
+
+\stopsectionlevel
+
+\startsectionlevel[title={教育经历},reference={教育经历}]
+
+\startdescription{2025-2028}
+  {\bf 计算机科学与技术}; 暨南大学
+
+  {\em 主要课程：计算机组成原理}
+\stopdescription
+
+\startdescription{2018-2021}
+  {\bf 工商管理}; 广东食品药品职业学院
+
+  {\em 主要课程：企业战略管理}
+\stopdescription
+
+\stopsectionlevel
+
+\startsectionlevel[title={项目经历},reference={项目经历}]
+
+\startdescription{快消品二维码营销系统}
+  DAU 30万+，用户总量2000万 1.
+  负责设计并实现二维码生成与管理模块，确保每个二维码的唯一性与系统的稳定性。
+  2.
+  开发积分商城功能，包括商品展示、积分兑换流程，提升用户参与度和忠诚度。
+  3. 实现订单追踪系统，通过二维码链接线上交易与线下核销，优化用户体验。
+  4.
+  参与后端服务的开发，支持高并发场景下扫码核销、数据收集与分析等业务需求。
+  6.
+  参与系统的日常维护与性能优化，保障平台稳定运行，满足日活跃用户30万+的需求。
+  7.
+  通过持续迭代，根据市场反馈和用户数据，优化营销策略，提高整体营销效率。
+
+  \startitemize[packed]
+  \item
+    设计JWT多端统一鉴权方案，实现供应商与外部用户安全接入，日均处理4万用户注册；
+  \item
+    基于MQ队列解耦扫码权限异步缓冲校验，确保30万+日扫码请求99.9\letterpercent{}实时响应；
+  \item
+    采用Redisson分布式锁解决积分商城超卖问题，并发订单处理能力提升至5000+/秒；
+  \item
+    开发手写板电子协议签署功能，简化业务签署流程。
+  \stopitemize
+\stopdescription
+
+\startdescription{快消品营销自动化系统（终端规模400万+）}
+  \startenumerate[n,packed][stopper=.]
+  \item
+    负责快消品营销自动化系统的设计与开发，专注于优化销售过程管理，提升客户信息全生命周期的管理效率。
+  \item
+    开发销售机会跟踪系统，确保销售团队及时响应并有效跟进潜在商机。
+  \item
+    确保整个销售流程的规范性和完整性，通过系统功能的不断迭代与优化，支持业务持续增长。
+  \stopenumerate
+
+  \startitemize[packed]
+  \item
+    主导门店拜访流程配置化、片区管理模块、铺市活动管理及资产投放模块开发，日均支持10万+终端拜访、运营；
+  \item
+    集成第三方表单实现数据自动化采集，设计多线程数据推送接口，3小时内完成400万终端数据同步至第三方平台；
+  \item
+    搭建百度AI商品实景图标注系统，提示货架商品识别准确率至95\letterpercent{}。
+  \stopitemize
+
+  {\bf 职责:}
+  1.主导门店拜访流程配置化、片区管理模块、铺市活动管理及资产投放模块开发，日均支持10万+终端拜访、运营；
+  2.集成第三方表单实现数据自动化采集，设计多线程数据推送接口，3小时内完成400万终端数据同步至第三方平台；
+  3.搭建百度AI商品实景图标注系统，提示货架商品识别准确率至95\letterpercent{}。
+
+  Basic knowledge of {\bf C}, {\bf x86 assembly}, {\bf forth}, {\bf
+  Common Lisp}
+\stopdescription
+
+\stopsectionlevel
+
+\startsectionlevel[title={Extra Section, Call it Whatever You
+Want},reference={extra-section-call-it-whatever-you-want}]
+
+\startitemize
+\item
+  Human Languages:
+
+  \startitemize[packed]
+  \item
+    English (native speaker)
+  \item
+    ???
+  \item
+    This is what a nested list looks like.
+  \stopitemize
+\item
+  Random tidbit
+\item
+  Other sort of impressive-sounding thing you did
+\stopitemize
+
+\thinrule
+
+\stopsectionlevel
+
+\stopsectionlevel
+
+\stoptext
