@@ -7,7 +7,17 @@ services:
       context: .
       dockerfile: ./.docker/resume.dockerfile
     container_name: resume-make
-    entrypoint: /entrypoint.sh
+    #entrypoint: make
     image: resume-make
     volumes:
-      - .:/home/app/resume:z
+      - .:/data
+      - ./fonts:/usr/share/fonts
+      # 打印系统字体列表 然后make 
+      #
+    command: sh -c " mkdir -p /opt/texlive/texmf-local/tex/context/third &&  cd /opt/texlive/texmf-local/tex/context/third &&  git clone https://github.com/liyanrui/zhfonts.git &&  source ~/context/tex/setuptex && context --generate && tar -zxvf /usr/share/fonts/fonts.tar.gz  && cp -r /usr/share/fonts /opt/texlive/texmf-local/ && fc-cache -fv && context --generate && mtxrun --generate  && mtxrun --script fonts --reload &&  mtxrun --script fonts --list --all && ls -l /opt/texlive/texmf-local/fonts "
+    # sh -c "mkdir -p /opt/texlive/texmf-local/fonts/truetype/non-free && cp /usr/share/fonts/simsun.ttf /opt/texlive/texmf-local/fonts/truetype/non-free && fc-cache -fv && mtxrun --generate && context --generate && mtxrun --script fonts --reload &&  mtxrun --script fonts --list --all "
+    #  && fc-list && make
+
+    # /usr/share/fonts/YaHeiMonacoHybrid.ttf: YaHei Monaco Hybird:style=Regular,Normal,obyčejné,Standard,Κανονικά,Normaali,Normál,Normale,Standaard,Normalny,Обычный,Normálne,Navadno,Arrunta
+
+

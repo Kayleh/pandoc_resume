@@ -27,7 +27,24 @@
 
 %\setuppagenumbering[location={footer,center}]
 
-\setupbodyfont[11pt, helvetica]
+\setupbodyfont[11pt, simkai]
+%% \setupbodyfont [11pt, mainface]
+
+\definefallbackfamily [mainface] [rm] [simkai] [range=cjkunifiedideographs,force=yes]
+\definefontfamily     [mainface] [rm] [simkai]
+
+\definefallbackfamily [mainface] [ss] [simkai] [range=cjkunifiedideographs,force=yes]
+\definefontfamily     [mainface] [ss] [simkai]
+
+\definefallbackfamily [mainface] [tt] [simkai] [features=none,range=cjkunifiedideographs,force=yes]
+\definefontfamily     [mainface] [tt] [simkai] [features=none]
+
+\definefontfamily     [mainface] [mm] [simkai]
+
+\setupbodyfont[mainface, 11pt]
+
+% 中文断行
+\setscript[hanzi]
 
 \setupwhitespace[medium]
 
@@ -71,32 +88,28 @@
 
 \starttext
 
-\startsectionlevel[title={姚锦庆},reference={姚锦庆}]
+\section[title={姚锦庆},reference={姚锦庆}]
 
 \startplacetable[location=none]
 \startxtable
-\startxtablehead[head]
-\stopxtablehead
 \startxtablebody[body]
 \startxrow
 \startxcell 个人网站 <https://www.ka \stopxcell
 \startxcell yleh.top>
-email：\goto{kayleh@foxmail.com}[url(mailto:kayleh@foxmail.com)] \stopxcell
+email：\useURL[url1][mailto:kayleh@foxmail.com][][kayleh@foxmail.com]\from[url1] \stopxcell
 \stopxrow
-\startxrowgroup[lastrow]
+\stopxtablebody
+\startxtablefoot[foot]
 \startxrow
 \startxcell 5年经验 \stopxcell
 \startxcell 15625715192 \stopxcell
 \stopxrow
-\stopxrowgroup
-\stopxtablebody
-\startxtablefoot[foot]
 \stopxtablefoot
 \stopxtable
 \stopplacetable
 
 \startblockquote
-个人网站：\useURL[url1][https://www.kayleh.top]\from[url1]
+个人网站：\useURL[url2][https://www.kayleh.top]\from[url2]
 
 资深全栈开发工程师，4年大型企业级应用开发经验，曾主导0到1交付千万级用户项目。精通Java/Python全栈技术体系（Spring
 Boot/Django/Vue.js/TypeScript），擅长分布式系统与微服务架构设计。具备TOC/TOB产品独立开发能力，主导构建过日均处理百万级请求的高并发系统，保障3000万+注册用户平台实时稳定运行。
@@ -104,7 +117,7 @@ Boot/Django/Vue.js/TypeScript），擅长分布式系统与微服务架构设计
 技术栈与贵司岗位需求高度契合，可快速投入核心业务开发。
 \stopblockquote
 
-\startsectionlevel[title={技能},reference={技能}]
+\subsection[title={技能},reference={技能}]
 
 \startitemize
 \item
@@ -147,9 +160,7 @@ Boot/Django/Vue.js/TypeScript），擅长分布式系统与微服务架构设计
 
 \thinrule
 
-\stopsectionlevel
-
-\startsectionlevel[title={工作经历},reference={工作经历}]
+\subsection[title={工作经历},reference={工作经历}]
 
 {\bf 广州市正易信息科技有限公司 - 后端研发（2021/05 - 2025/04）:}
 
@@ -192,9 +203,7 @@ Boot/Django/Vue.js/TypeScript），擅长分布式系统与微服务架构设计
   3.监控并分析内容表现数据，调整运营策略以提高用户参与度和内容传播范围。
 \stopitemize
 
-\stopsectionlevel
-
-\startsectionlevel[title={教育经历},reference={教育经历}]
+\subsection[title={教育经历},reference={教育经历}]
 
 \startdescription{2025-2028}
   {\bf 计算机科学与技术}; 暨南大学
@@ -208,9 +217,7 @@ Boot/Django/Vue.js/TypeScript），擅长分布式系统与微服务架构设计
   {\em 主要课程：企业战略管理}
 \stopdescription
 
-\stopsectionlevel
-
-\startsectionlevel[title={项目经历},reference={项目经历}]
+\subsection[title={项目经历},reference={项目经历}]
 
 \startdescription{快消品二维码营销系统}
   DAU 30万+，用户总量2000万 1.
@@ -238,14 +245,14 @@ Boot/Django/Vue.js/TypeScript），擅长分布式系统与微服务架构设计
 \stopdescription
 
 \startdescription{快消品营销自动化系统（终端规模400万+）}
-  \startenumerate[n,packed][stopper=.]
+  \startitemize[n,packed][stopper=.]
   \item
     负责快消品营销自动化系统的设计与开发，专注于优化销售过程管理，提升客户信息全生命周期的管理效率。
   \item
     开发销售机会跟踪系统，确保销售团队及时响应并有效跟进潜在商机。
   \item
     确保整个销售流程的规范性和完整性，通过系统功能的不断迭代与优化，支持业务持续增长。
-  \stopenumerate
+  \stopitemize
 
   \startitemize[packed]
   \item
@@ -261,13 +268,11 @@ Boot/Django/Vue.js/TypeScript），擅长分布式系统与微服务架构设计
   2.集成第三方表单实现数据自动化采集，设计多线程数据推送接口，3小时内完成400万终端数据同步至第三方平台；
   3.搭建百度AI商品实景图标注系统，提示货架商品识别准确率至95\letterpercent{}。
 
-  Basic knowledge of {\bf C}, {\bf x86 assembly}, {\bf forth}, {\bf
-  Common Lisp}
+  Basic knowledge of {\bf C}, {\bf x86 assembly}, {\bf forth},
+  {\bf Common Lisp}
 \stopdescription
 
-\stopsectionlevel
-
-\startsectionlevel[title={Extra Section, Call it Whatever You
+\subsection[title={Extra Section, Call it Whatever You
 Want},reference={extra-section-call-it-whatever-you-want}]
 
 \startitemize
@@ -289,9 +294,5 @@ Want},reference={extra-section-call-it-whatever-you-want}]
 \stopitemize
 
 \thinrule
-
-\stopsectionlevel
-
-\stopsectionlevel
 
 \stoptext

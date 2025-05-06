@@ -30,7 +30,24 @@ $endif$
 
 %\setuppagenumbering[location={footer,center}]
 
-\setupbodyfont[11pt, helvetica]
+\setupbodyfont[11pt, simkai]
+%% \setupbodyfont [11pt, mainface]
+
+\definefallbackfamily [mainface] [rm] [simkai] [range=cjkunifiedideographs,force=yes]
+\definefontfamily     [mainface] [rm] [simkai]
+
+\definefallbackfamily [mainface] [ss] [simkai] [range=cjkunifiedideographs,force=yes]
+\definefontfamily     [mainface] [ss] [simkai]
+
+\definefallbackfamily [mainface] [tt] [simkai] [features=none,range=cjkunifiedideographs,force=yes]
+\definefontfamily     [mainface] [tt] [simkai] [features=none]
+
+\definefontfamily     [mainface] [mm] [simkai]
+
+\setupbodyfont[mainface, 11pt]
+
+% 中文断行
+\setscript[hanzi]
 
 \setupwhitespace[medium]
 

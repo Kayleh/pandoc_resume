@@ -27,7 +27,24 @@
 
 %\setuppagenumbering[location={footer,center}]
 
-\setupbodyfont[11pt, helvetica]
+\setupbodyfont[11pt, simkai]
+%% \setupbodyfont [11pt, mainface]
+
+\definefallbackfamily [mainface] [rm] [simkai] [range=cjkunifiedideographs,force=yes]
+\definefontfamily     [mainface] [rm] [simkai]
+
+\definefallbackfamily [mainface] [ss] [simkai] [range=cjkunifiedideographs,force=yes]
+\definefontfamily     [mainface] [ss] [simkai]
+
+\definefallbackfamily [mainface] [tt] [simkai] [features=none,range=cjkunifiedideographs,force=yes]
+\definefontfamily     [mainface] [tt] [simkai] [features=none]
+
+\definefontfamily     [mainface] [mm] [simkai]
+
+\setupbodyfont[mainface, 11pt]
+
+% 中文断行
+\setscript[hanzi]
 
 \setupwhitespace[medium]
 
@@ -71,7 +88,7 @@
 
 \starttext
 
-\startsectionlevel[title={Johnny Coder},reference={johnny-coder}]
+\section[title={Johnny Coder},reference={johnny-coder}]
 
 \thinrule
 
@@ -83,7 +100,7 @@ with a backslash forces a line break.
 
 \thinrule
 
-\startsectionlevel[title={Education},reference={education}]
+\subsection[title={Education},reference={education}]
 
 \startdescription{2010-2014 (expected)}
   {\bf PhD, Computer Science}; Awesome University (MyTown)
@@ -99,9 +116,7 @@ with a backslash forces a line break.
   {\em Minor: Awesomeology}
 \stopdescription
 
-\stopsectionlevel
-
-\startsectionlevel[title={Experience},reference={experience}]
+\subsection[title={Experience},reference={experience}]
 
 {\bf Your Most Recent Work Experience:}
 
@@ -112,17 +127,15 @@ learned and other remarks. Can also include lists and links:
 \item
   First item
 \item
-  Item with \goto{link}[url(http://www.example.com)]. Links will work
-  both in the html and pdf versions.
+  Item with \useURL[url1][http://www.example.com][][link]\from[url1].
+  Links will work both in the html and pdf versions.
 \stopitemize
 
 {\bf That Other Job You Had}
 
 Also with a short description.
 
-\stopsectionlevel
-
-\startsectionlevel[title={Technical
+\subsection[title={Technical
 Experience},reference={technical-experience}]
 
 \startdescription{My Cool Side Project}
@@ -142,8 +155,8 @@ Experience},reference={technical-experience}]
   List open source contributions here, perhaps placing emphasis on the
   project names, for example the {\bf Linux Kernel}, where you
   implemented multithreading over a long weekend, or {\bf node.js} (with
-  \goto{link}[url(http://nodejs.org)]) which was actually totally your
-  idea\ldots{}
+  \useURL[url2][http://nodejs.org][][link]\from[url2]) which was
+  actually totally your idea\ldots{}
 \stopdescription
 
 \startdescription{Programming Languages}
@@ -157,19 +170,17 @@ Experience},reference={technical-experience}]
 
   {\bf second-lang:} Description of your experience with second-lang,
   perhaps again including a {[}link{]}
-  \goto{ref}[url(https://github.com/githubuser/superlongprojectname)],
+  \useURL[url3][https://github.com/githubuser/superlongprojectname][][ref]\from[url3],
   this time placing the url reference elsewhere in the document to
   reduce clutter (see source file).
 
   {\bf obscure-but-impressive-lang:} We both know this one's pushing it.
 
-  Basic knowledge of {\bf C}, {\bf x86 assembly}, {\bf forth}, {\bf
-  Common Lisp}
+  Basic knowledge of {\bf C}, {\bf x86 assembly}, {\bf forth},
+  {\bf Common Lisp}
 \stopdescription
 
-\stopsectionlevel
-
-\startsectionlevel[title={Extra Section, Call it Whatever You
+\subsection[title={Extra Section, Call it Whatever You
 Want},reference={extra-section-call-it-whatever-you-want}]
 
 \startitemize
@@ -193,13 +204,9 @@ Want},reference={extra-section-call-it-whatever-you-want}]
 \thinrule
 
 \startblockquote
-\goto{email@example.com}[url(mailto:email@example.com)] • +00 (0)00 000
-0000 • XX years old\crlf
+\useURL[url4][mailto:email@example.com][][email@example.com]\from[url4]
+• +00 (0)00 000 0000 • XX years old\crlf
 address - Mytown, Mycountry
 \stopblockquote
-
-\stopsectionlevel
-
-\stopsectionlevel
 
 \stoptext

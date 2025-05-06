@@ -27,7 +27,24 @@
 
 %\setuppagenumbering[location={footer,center}]
 
-\setupbodyfont[11pt, helvetica]
+\setupbodyfont[11pt, simkai]
+%% \setupbodyfont [11pt, mainface]
+
+\definefallbackfamily [mainface] [rm] [simkai] [range=cjkunifiedideographs,force=yes]
+\definefontfamily     [mainface] [rm] [simkai]
+
+\definefallbackfamily [mainface] [ss] [simkai] [range=cjkunifiedideographs,force=yes]
+\definefontfamily     [mainface] [ss] [simkai]
+
+\definefallbackfamily [mainface] [tt] [simkai] [features=none,range=cjkunifiedideographs,force=yes]
+\definefontfamily     [mainface] [tt] [simkai] [features=none]
+
+\definefontfamily     [mainface] [mm] [simkai]
+
+\setupbodyfont[mainface, 11pt]
+
+% 中文断行
+\setscript[hanzi]
 
 \setupwhitespace[medium]
 
@@ -71,7 +88,7 @@
 
 \starttext
 
-\startsectionlevel[title={姚锦庆},reference={姚锦庆}]
+\section[title={姚锦庆},reference={姚锦庆}]
 
 \thinrule
 
@@ -84,7 +101,7 @@ Boot/Django/Vue.js/TypeScript），擅长分布式系统与微服务架构设计
 
 \thinrule
 
-\startsectionlevel[title={技能},reference={技能}]
+\subsection[title={技能清单},reference={技能清单}]
 
 \startitemize
 \item
@@ -116,9 +133,7 @@ Boot/Django/Vue.js/TypeScript），擅长分布式系统与微服务架构设计
 
 \thinrule
 
-\stopsectionlevel
-
-\startsectionlevel[title={工作经历},reference={工作经历}]
+\subsection[title={工作经历},reference={工作经历}]
 
 {\bf 广州市正易信息科技有限公司 - 后端研发（2021/05 - 2025/04）:}
 
@@ -161,9 +176,7 @@ Boot/Django/Vue.js/TypeScript），擅长分布式系统与微服务架构设计
   3.监控并分析内容表现数据，调整运营策略以提高用户参与度和内容传播范围。
 \stopitemize
 
-\stopsectionlevel
-
-\startsectionlevel[title={教育经历},reference={教育经历}]
+\subsection[title={教育经历},reference={教育经历}]
 
 \startdescription{2025-2028}
   {\bf 计算机科学与技术}; 暨南大学
@@ -177,12 +190,10 @@ Boot/Django/Vue.js/TypeScript），擅长分布式系统与微服务架构设计
   {\em 主要课程：企业战略管理}
 \stopdescription
 
-\stopsectionlevel
-
-\startsectionlevel[title={项目经历},reference={项目经历}]
+\subsection[title={项目经历},reference={项目经历}]
 
 \startdescription{快消品二维码营销系统（DAU 30万+，用户总量2000万）}
-  \startenumerate[n,packed][stopper=.]
+  \startitemize[n,packed][stopper=.]
   \item
     负责设计并实现二维码生成与管理模块，确保每个二维码的唯一性与系统的稳定性。
   \item
@@ -191,7 +202,7 @@ Boot/Django/Vue.js/TypeScript），擅长分布式系统与微服务架构设计
     实现订单追踪系统，通过二维码链接线上交易与线下核销，优化用户体验。
   \item
     参与后端服务的开发，支持高并发场景下扫码核销、数据收集与分析等业务需求。
-  \stopenumerate
+  \stopitemize
 
   \startitemize[packed]
   \item
@@ -206,14 +217,14 @@ Boot/Django/Vue.js/TypeScript），擅长分布式系统与微服务架构设计
 \stopdescription
 
 \startdescription{快消品营销自动化系统（终端规模400万+）}
-  \startenumerate[n,packed][stopper=.]
+  \startitemize[n,packed][stopper=.]
   \item
     负责快消品营销自动化系统的设计与开发，专注于优化销售过程管理，提升客户信息全生命周期的管理效率。
   \item
     开发销售机会跟踪系统，确保销售团队及时响应并有效跟进潜在商机。
   \item
     确保整个销售流程的规范性和完整性，通过系统功能的不断迭代与优化，支持业务持续增长。
-  \stopenumerate
+  \stopitemize
 
   \startitemize[packed]
   \item
@@ -231,37 +242,8 @@ Boot/Django/Vue.js/TypeScript），擅长分布式系统与微服务架构设计
 
   3.搭建百度AI商品实景图标注系统，提示货架商品识别准确率至95\letterpercent{}。
 
-  Basic knowledge of {\bf C}, {\bf x86 assembly}, {\bf forth}, {\bf
-  Common Lisp}
+  Basic knowledge of {\bf C}, {\bf x86 assembly}, {\bf forth},
+  {\bf Common Lisp}
 \stopdescription
-
-\stopsectionlevel
-
-\startsectionlevel[title={Extra Section, Call it Whatever You
-Want},reference={extra-section-call-it-whatever-you-want}]
-
-\startitemize
-\item
-  Human Languages:
-
-  \startitemize[packed]
-  \item
-    English (native speaker)
-  \item
-    ???
-  \item
-    This is what a nested list looks like.
-  \stopitemize
-\item
-  Random tidbit
-\item
-  Other sort of impressive-sounding thing you did
-\stopitemize
-
-\thinrule
-
-\stopsectionlevel
-
-\stopsectionlevel
 
 \stoptext
